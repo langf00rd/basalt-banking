@@ -1,4 +1,5 @@
 import { CONVERSION_API_BASE_URL } from "../constants";
+import saveConversionHistory from "../conversion-history";
 
 /**
  * converts an amount from one currency to another
@@ -12,6 +13,7 @@ export async function convertCurrency(
    toCurrencyCode: string,
    amount: number
 ) {
+   saveConversionHistory(fromCurrencyCode, toCurrencyCode, amount);
    const url = `${CONVERSION_API_BASE_URL}?from=${fromCurrencyCode}&to=${toCurrencyCode}&amount=${amount}`;
    const options = {
       method: "GET",

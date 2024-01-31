@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
    Table,
    TableBody,
@@ -7,40 +8,46 @@ import {
    TableHeader,
    TableRow,
 } from "./ui/table";
+import { getConversionHistory } from "@/lib/conversion-history";
+import { ConversionHistory } from "@/lib/interface";
 
 export default function ConversionHistoryTable() {
+   const [conversionHistory, setConversionHistory] = useState<ConversionHistory[] | null>(
+      null
+   );
+
+   useEffect(() => {
+      setConversionHistory(getConversionHistory());
+   }, []);
+
+   if (!conversionHistory) return <div />;
+
    return (
       <div className="space-y-3">
          <h3 className="text-black font-medium">Conversion history</h3>
          <Table>
-            <TableCaption>A list of your recent currency conversions.</TableCaption>
+            <TableCaption>
+               {conversionHistory.length < 1 && <p>No conversion history</p>}
+            </TableCaption>
             <TableHeader>
                <TableRow>
                   <TableHead className="w-[100px]">From</TableHead>
                   <TableHead>To</TableHead>
                   <TableHead>Amount</TableHead>
-                  <TableHead className="text-right">Rate</TableHead>
+                  <TableHead>Date</TableHead>
                </TableRow>
             </TableHeader>
             <TableBody>
-               <TableRow>
-                  <TableCell className="font-medium">USD</TableCell>
-                  <TableCell>GHS</TableCell>
-                  <TableCell>1350</TableCell>
-                  <TableCell className="text-right">11.27</TableCell>
-               </TableRow>
-               <TableRow>
-                  <TableCell className="font-medium">USD</TableCell>
-                  <TableCell>GHS</TableCell>
-                  <TableCell>1350</TableCell>
-                  <TableCell className="text-right">11.27</TableCell>
-               </TableRow>
-               <TableRow>
-                  <TableCell className="font-medium">USD</TableCell>
-                  <TableCell>GHS</TableCell>
-                  <TableCell>1350</TableCell>
-                  <TableCell className="text-right">11.27</TableCell>
-               </TableRow>
+               {conversionHistory.map((conversion) => (
+                  <TableRow key={conversion.fromCurrencyCode}>
+                     <TableCell>{conversion.toCurrencyCode}</TableCell>
+                     <TableCell>{conversion.fromCurrencyCode}</TableCell>
+                     <TableCell>{conversion.amount}</TableCell>
+                     <TableCell>
+                        {new Date(conversion.timestamp).toLocaleDateString()}
+                     </TableCell>
+                  </TableRow>
+               ))}
             </TableBody>
          </Table>
       </div>

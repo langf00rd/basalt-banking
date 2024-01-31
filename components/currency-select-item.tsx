@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CurrencyData } from "../lib/types";
+import { CurrencyData } from "../lib/interface";
 import { CurrencySelect } from "./currency-select";
 /**
  * a component for selecting a currency. you can either input or display an amount using the `value` and `showInput` props

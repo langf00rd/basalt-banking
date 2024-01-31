@@ -6,7 +6,7 @@ export const CHATBOT_CUSTOM_ACTIONS = [
       action: () => {},
    },
    {
-      label: "Ask CC AI",
+      label: "Ask BB AI",
       action: () => {},
    },
    {

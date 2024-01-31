@@ -7,9 +7,9 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 export default function CurrencyConverter() {
+   const [rate, setRate] = useState(0);
    const [amount, setAmount] = useState(1);
    const [result, setResult] = useState(0);
-   const [rate, setRate] = useState(0);
    const [isloading, setIsLoading] = useState(false);
 
    const fromCurrencyData = useGlobalStore((state) => state.fromCurrencyData);
@@ -18,8 +18,13 @@ export default function CurrencyConverter() {
    const setToCurrencyData = useGlobalStore((state) => state.setToCurrencyData);
 
    async function handleConvertCurrency() {
-      if (!fromCurrencyData?.currency || !toCurrencyData?.currency) return;
+      if (!fromCurrencyData?.currency || !toCurrencyData?.currency) {
+         toast.error("Please select a currency");
+         return;
+      }
+
       setIsLoading(true);
+
       try {
          const response = await convertCurrency(
             fromCurrencyData.currency.code,
@@ -31,6 +36,7 @@ export default function CurrencyConverter() {
       } catch (error) {
          toast.error(String(error));
       }
+
       setIsLoading(false);
    }
    return (

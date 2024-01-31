@@ -16,7 +16,7 @@ export default function ChatBox() {
 
    return (
       <>
-         <FAB className="fixed bottom-20 right-20" onClick={toggleShowChatBox}>
+         <FAB className="fixed bottom-20 right-20 z-10" onClick={toggleShowChatBox}>
             {!showChatBox ? <Sparkles /> : <X />}
          </FAB>
          <AnimatePresence>

@@ -1,13 +1,9 @@
 import { create } from "zustand";
-import { CurrencyData } from "./types";
+import { GlobalStoreState } from "./interface";
 
-interface GlobalStoreState {
-   fromCurrencyData: CurrencyData | null;
-   setFromCurrencyData: (value: CurrencyData) => void;
-   toCurrencyData: CurrencyData | null;
-   setToCurrencyData: (value: CurrencyData) => void;
-}
-
+/**
+ * global store for storing global state
+ */
 export const useGlobalStore = create<GlobalStoreState>((set) => ({
    fromCurrencyData: null,
    toCurrencyData: null,
