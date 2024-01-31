@@ -16,7 +16,7 @@ export async function convertCurrency(
    const options = {
       method: "GET",
       headers: {
-         "X-RapidAPI-Key": process.env.RAPID_API_KEY as string,
+         "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_API_KEY as string,
          "X-RapidAPI-Host": "currency-conversion-and-exchange-rates.p.rapidapi.com",
       },
    };
