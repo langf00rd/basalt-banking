@@ -10,7 +10,7 @@ export default function Home() {
          <ChatBox />
          <main className="flex h-screen">
             <Aside />
-            <div className="flex-[4] p-10">
+            <div className="flex-[5] p-10">
                <div className="space-y-[70px]">
                   <Header />
                   <h1 className="text-3xl text-black">Currency converter</h1>
