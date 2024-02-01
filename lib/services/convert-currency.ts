@@ -1,6 +1,5 @@
 import { CONVERSION_API_BASE_URL } from "../constants";
-import saveConversionHistory from "../conversion-history";
-
+import saveConversionHistory from "../utils/conversion-history";
 /**
  * converts an amount from one currency to another
  * @param fromCurrencyCode - code of currency to be converted from

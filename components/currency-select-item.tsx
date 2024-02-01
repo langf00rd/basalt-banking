@@ -44,7 +44,7 @@ export function CurrecySelectItem(props: {
                      onChange={(e) => props.onAmountChange?.(Number(e.target.value))}
                      placeholder="0.00"
                      type="number"
-                     className="w-full text-black bg-transparent outline-none"
+                     className="w-full text-black border-none bg-transparent outline-none"
                   />
                </div>
             ) : (

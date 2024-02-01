@@ -3,7 +3,7 @@ import { CurrecySelectItem } from "./currency-select-item";
 import FAB from "./ui/fab";
 import { convertCurrency } from "@/lib/services/convert-currency";
 import { useGlobalStore } from "@/lib/store";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { toast } from "sonner";
 
 export default function CurrencyConverter() {
@@ -17,7 +17,9 @@ export default function CurrencyConverter() {
    const toCurrencyData = useGlobalStore((state) => state.toCurrencyData);
    const setToCurrencyData = useGlobalStore((state) => state.setToCurrencyData);
 
-   async function handleConvertCurrency() {
+   async function handleConvertCurrency(e: FormEvent<HTMLFormElement>) {
+      e.preventDefault();
+
       if (!fromCurrencyData?.currency || !toCurrencyData?.currency) {
          toast.error("Please select a currency");
          return;
@@ -39,9 +41,10 @@ export default function CurrencyConverter() {
 
       setIsLoading(false);
    }
+
    return (
       <div>
-         <div className="flex">
+         <form onSubmit={handleConvertCurrency} className="flex">
             <CurrecySelectItem
                type="from"
                onAmountChange={setAmount}
@@ -50,12 +53,9 @@ export default function CurrencyConverter() {
                setCurrencyData={setFromCurrencyData}
             />
             <div className="flex-1 flex-col space-y-5 flex items-center justify-center">
-               <FAB onClick={handleConvertCurrency}>
+               <FAB>
                   {isloading ? <Loader className="animate-spin" /> : <ArrowRight />}
                </FAB>
-               {/* <FAB>
-                           <Shuffle />
-                        </FAB> */}
             </div>
             <CurrecySelectItem
                type="to"
@@ -63,7 +63,7 @@ export default function CurrencyConverter() {
                currencyData={toCurrencyData}
                setCurrencyData={setToCurrencyData}
             />
-         </div>
+         </form>
          <div className="p-2 flex space-x-2">
             <Info />
             <p>Exchange rate: {rate}</p>

@@ -21,3 +21,14 @@ export interface GlobalStoreState {
    toCurrencyData: CurrencyData | null;
    setToCurrencyData: (value: CurrencyData) => void;
 }
+
+export interface News {
+   impact_reasoning: string;
+   link: string;
+   pub_date: string;
+   publisher: string;
+   sentiment_impact: number;
+   summary: string;
+   ticker_impacted: string;
+   title: string;
+}

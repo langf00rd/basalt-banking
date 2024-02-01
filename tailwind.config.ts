@@ -10,6 +10,10 @@ const config: Config = {
       extend: {
          colors: {
             primary: "#1c4ed8",
+            popover: "#fff",
+            background: "#fff",
+            card: "#fff",
+            "primary-foreground": "#fff",
          },
       },
    },

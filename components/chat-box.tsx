@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import FAB from "./ui/fab";
 import { Sparkles, X } from "lucide-react";
-import { CHATBOT_CUSTOM_ACTIONS } from "@/lib/content";
+import Pill from "./ui/pill";
 
 export default function ChatBox() {
    const [showChatBox, setShowChatBox] = useState(false);
@@ -26,7 +26,7 @@ export default function ChatBox() {
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 50 }}
-                  className="shadow-2xl fixed bottom-[150px] right-10 rounded-2xl p-5 h-[60vh] w-[400px] bg-white z-10 overflow-hidden space-y-3"
+                  className="shadow-2xl overflow-y-scroll fixed bottom-[150px] right-10 rounded-2xl p-5 h-[60vh] w-[400px] bg-white z-10 space-y-3"
                >
                   <p className="bg-gray-100 p-5 rounded-xl">
                      Here is some info about {fromCurrencyData?.currency.code} and{" "}
@@ -35,14 +35,9 @@ export default function ChatBox() {
                      non-lorem words
                   </p>
                   <ul className="flex flex-wrap gap-3 border-t py-3">
-                     {CHATBOT_CUSTOM_ACTIONS.map((action) => (
-                        <li
-                           key={action.label}
-                           className="border cursor-pointer hover:bg-gray-100 transition-colors px-3 py-2 w-max rounded-full border-primary text-primary"
-                        >
-                           <p className="whitespace-nowrap">{action.label}</p>
-                        </li>
-                     ))}
+                     <Pill label="Ask BB AI" />
+                     <Pill label="What happened in the past 5mins?" />
+                     <Pill label="See top gainers" />
                   </ul>
                </motion.div>
             )}

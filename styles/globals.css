@@ -20,6 +20,7 @@ h4,
 h5,
 h6 {
    font-weight: bold;
+   color: black;
 }
 
 input::-webkit-outer-spin-button,
@@ -30,4 +31,11 @@ input::-webkit-inner-spin-button {
 
 input[type="number"] {
    -moz-appearance: textfield;
+}
+
+input {
+   border: 1px solid #e5e5e5;
+   width: 100%;
+   padding: 10px 15px;
+   border-radius: 10px;
 }

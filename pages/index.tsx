@@ -1,24 +1,24 @@
-import Aside from "@/components/aside";
-import ChatBox from "@/components/chat-box";
-import ConversionHistoryTable from "@/components/conversion-history-table";
-import CurrencyConverter from "@/components/converter";
-import Header from "@/components/header";
+import MainLayout from "@/components/layouts/main-layout";
+import TransactionsTable from "@/components/transactions-table";
+import { Card } from "@/components/ui/card";
 
 export default function Home() {
    return (
-      <>
-         <ChatBox />
-         <main className="flex h-screen">
-            <Aside />
-            <div className="flex-[5] p-10 overflow-y-scroll">
-               <div className="space-y-[70px]">
-                  <Header />
-                  <h1 className="text-3xl text-black">Currency converter</h1>
-                  <CurrencyConverter />
-                  <ConversionHistoryTable />
-               </div>
-            </div>
-         </main>
-      </>
+      <MainLayout title="Cards">
+         <ul className="grid grid-cols-5 gap-5">
+            {Array.from({ length: 3 }).map((_, i) => (
+               <Card className="rounded-3xl p-5 h-[250px] bg-white" key={i}>
+                  <div className="">
+                     <h3 className="text-black text-xl">0.00</h3>
+                     <p>US Dollar</p>
+                  </div>
+               </Card>
+            ))}
+         </ul>
+         <div className="space-y-5">
+            <h1 className="text-3xl text-black">Transactions</h1>
+            <TransactionsTable />
+         </div>
+      </MainLayout>
    );
 }

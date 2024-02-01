@@ -1,4 +1,4 @@
-import { ConversionHistory } from "./interface";
+import { ConversionHistory } from "../interface";
 /**
  * saves conversion history to local storage
  * @param fromCurrencyCode
@@ -30,9 +30,6 @@ export default function saveConversionHistory(
  */
 export function getConversionHistory() {
    const storedConversions = localStorage.getItem("conversions");
-   if (storedConversions) {
-      return [...JSON.parse(storedConversions)].reverse() as ConversionHistory[];
-   } else {
-      return [];
-   }
+   if (!storedConversions) return [];
+   return [...JSON.parse(storedConversions)].reverse() as ConversionHistory[];
 }

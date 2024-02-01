@@ -1,5 +1,10 @@
 import { Calendar, Plus } from "lucide-react";
 import Image from "next/image";
+import { Button } from "./ui/button";
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import { HEADER_PROFILE_LINKS } from "@/lib/constants";
+import Link from "next/link";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 export default function Header() {
    return (
@@ -14,17 +19,32 @@ export default function Header() {
             </div>
          </div>
          <div className="flex space-x-10">
-            <button className="flex items-center gap-2 bg-primary text-white p-2 px-4 rounded-md">
+            <Button className="flex items-center gap-2 bg-primary text-white p-2 px-4 rounded-md">
                <Plus />
-               New deposit
-            </button>
-            <Image
-               src="https://creativecommons.org/wp-content/uploads/2023/09/Timothy-Vollmer_avatar_1520860979.jpg"
-               width={50}
-               height={50}
-               className="rounded-full"
-               alt="hero"
-            />
+               New chat
+            </Button>
+            <Popover>
+               <PopoverTrigger>
+                  <Avatar>
+                     <AvatarImage src="https://github.com/shadcn.png" />
+                     <AvatarFallback>CN</AvatarFallback>
+                  </Avatar>
+               </PopoverTrigger>
+               <PopoverContent>
+                  <p className="text-black font-medium">Kate Doe</p>
+                  <p>Membership number 0000000</p>
+                  <ul className="space-y-2 mt-5">
+                     {HEADER_PROFILE_LINKS.map((link) => (
+                        <li key={link.href}>
+                           <Link href={link.href} className="flex items-center space-x-3">
+                              {link.icon}
+                              <p>{link.name}</p>
+                           </Link>
+                        </li>
+                     ))}
+                  </ul>
+               </PopoverContent>
+            </Popover>
          </div>
       </header>
    );
