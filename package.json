@@ -5,6 +5,7 @@
    "scripts": {
       "dev": "next dev",
       "build": "next build",
+      "format": "prettier --write \"**/*.{ts,tsx,md}\"",
       "start": "next start",
       "lint": "next lint",
       "prepare": "husky"
@@ -20,6 +21,7 @@
       "framer-motion": "^11.0.3",
       "lucide-react": "^0.319.0",
       "next": "14.1.0",
+      "prettier": "^3.2.4",
       "react": "^18",
       "react-dom": "^18",
       "react-query": "^3.39.3",

@@ -5,14 +5,15 @@ import apiHandler from "../utils/api-handler";
  * @returns news
  */
 export function fetchNews() {
-   return apiHandler<News[]>(
-      "https://real-time-financial-news-and-sentiments.p.rapidapi.com/news/rapidapi?page=1&limit=10",
-      {
-         method: "GET",
-         headers: {
-            "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_API_KEY as string,
-            "X-RapidAPI-Host": "real-time-financial-news-and-sentiments.p.rapidapi.com",
-         },
-      }
-   );
+  return apiHandler<News[]>(
+    "https://real-time-financial-news-and-sentiments.p.rapidapi.com/news/rapidapi?page=1&limit=10",
+    {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_API_KEY as string,
+        "X-RapidAPI-Host":
+          "real-time-financial-news-and-sentiments.p.rapidapi.com",
+      },
+    },
+  );
 }
