@@ -9,7 +9,7 @@ This React web app is a banking application that provides features for currency 
 
 ## Deployment
 
-The app is deployed on Vercel. You can check it out [here](basalt-banking).
+The app is deployed on Vercel. You can check it out [here](https://basalt-banking.vercel.app/).
 
 ## Getting Started
 
