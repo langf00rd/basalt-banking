@@ -5,8 +5,10 @@ import { useRouter } from "next/router";
 export default function Aside() {
   const router = useRouter();
   return (
-    <aside className="flex-1 bg-white p-5 flex justify-between flex-col space-y-[50px]">
-      <h3 className="text-2xl text-primary">Basalt Banking</h3>
+    <aside className="flex-1 bg-white p-5 flex justify-between flex-col border-r space-y-[50px]">
+      <h3 className="text-2xl text-primary">
+        Basalt <span className="text-black">Banking</span>
+      </h3>
       <ul>
         {ASIDE_LINKS.map((link) => (
           <Link key={link.href} href={link.href}>

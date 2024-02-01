@@ -1,5 +1,5 @@
-import { CURRENCIES } from "../lib/currencies";
-import { CurrencyData } from "../lib/interface";
+import { CURRENCIES } from "../../lib/currencies";
+import { CurrencyData } from "../../lib/interface";
 
 export function CurrencySelect(props: {
   onCurrencyChange: (currencyData: CurrencyData) => void;
