@@ -7,7 +7,7 @@ import {
    TableHead,
    TableHeader,
    TableRow,
-} from "./ui/table";
+} from "../ui/table";
 import { getConversionHistory } from "@/lib/utils/conversion-history";
 import { ConversionHistory } from "@/lib/interface";
 
