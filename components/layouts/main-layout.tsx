@@ -8,7 +8,7 @@ import ChatBox from "../chat-box";
 export default function MainLayout(props: {
    className?: string;
    children: ReactNode;
-   title: string;
+   title?: string;
 }) {
    const metaTitle = props.title ? `Basalt | ${props.title}` : "Basalt";
    return (
