@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CurrencyData } from "../lib/interface";
+import { CurrencyData } from "../../lib/interface";
 import { CurrencySelect } from "./currency-select";
 /**
  * a component for selecting a currency. you can either input or display an amount using the `value` and `showInput` props
@@ -43,6 +43,7 @@ export function CurrecySelectItem(props: {
             <input
               onChange={(e) => props.onAmountChange?.(Number(e.target.value))}
               placeholder="0.00"
+              required
               type="number"
               className="w-full text-black border-none bg-transparent outline-none"
             />

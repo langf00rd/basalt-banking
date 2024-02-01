@@ -1,5 +1,5 @@
 /**
- * handler to fetch data from the given url and returns the result
+ * handler to fetch data from the given url and returns the result based on the type provided as generic
  * @param url - url to fetch
  * @param options - fetch options
  */

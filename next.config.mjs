@@ -4,7 +4,7 @@ const nextConfig = {
    images: {
       remotePatterns: [
          {
-            hostname: "creativecommons.org",
+            hostname: "images.pexels.com",
          },
       ],
    },

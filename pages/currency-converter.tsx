@@ -1,5 +1,5 @@
 import ConversionHistoryTable from "@/components/tables/conversion-history-table";
-import CurrencyConverter from "@/components/converter";
+import CurrencyConverter from "@/components/currency-converter/currency-converter";
 import MainLayout from "@/components/layouts/main-layout";
 
 export default function CurrencyConverterPage() {

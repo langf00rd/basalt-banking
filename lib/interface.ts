@@ -32,3 +32,15 @@ export interface News {
   ticker_impacted: string;
   title: string;
 }
+
+export interface Profile {
+  first_name: string;
+  last_name: string;
+  dob: string;
+  address: string;
+  postal_code: string;
+  phone: string;
+  country: string;
+  city: string;
+  [id: string]: string; // for other fields
+}

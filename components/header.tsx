@@ -26,7 +26,11 @@ export default function Header() {
         <Popover>
           <PopoverTrigger>
             <Avatar>
-              <AvatarImage src="https://github.com/shadcn.png" />
+              <AvatarImage
+                fetchPriority="high"
+                className="object-cover"
+                src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+              />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
           </PopoverTrigger>
@@ -38,7 +42,7 @@ export default function Header() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="flex items-center space-x-3"
+                    className="flex items-center space-x-3 hover:text-primary transition-colors"
                   >
                     {link.icon}
                     <p>{link.name}</p>

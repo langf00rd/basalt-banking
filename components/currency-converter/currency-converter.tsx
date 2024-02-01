@@ -1,6 +1,6 @@
 import { Loader, ArrowRight, Info } from "lucide-react";
 import { CurrecySelectItem } from "./currency-select-item";
-import FAB from "./ui/fab";
+import FAB from "../ui/fab";
 import { convertCurrency } from "@/lib/services/convert-currency";
 import { useGlobalStore } from "@/lib/store";
 import { FormEvent, useState } from "react";
