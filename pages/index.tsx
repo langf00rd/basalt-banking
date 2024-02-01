@@ -1,5 +1,5 @@
 import MainLayout from "@/components/layouts/main-layout";
-import TransactionsTable from "@/components/transactions-table";
+import TransactionsTable from "@/components/tables/transactions-table";
 import { Card } from "@/components/ui/card";
 
 export default function Home() {

@@ -1,5 +1,5 @@
 import ChatBox from "@/components/chat-box";
-import ConversionHistoryTable from "@/components/conversion-history-table";
+import ConversionHistoryTable from "@/components/tables/conversion-history-table";
 import CurrencyConverter from "@/components/converter";
 import MainLayout from "@/components/layouts/main-layout";
 
