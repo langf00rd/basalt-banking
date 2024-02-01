@@ -11,10 +11,6 @@ This React web app is a banking application that provides features for currency 
 
 The app is deployed on Vercel. You can check it out [here](basalt-banking).
 
-## CI
-
-Continuous Integration (CI) is set up using GitHub Actions. This ensures automated linting, formatting and builds with each push to the repository
-
 ## Getting Started
 
 ### Prerequisites
@@ -53,6 +49,10 @@ pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000/) in your browser.
+
+## CI
+
+Continuous Integration (CI) is set up using GitHub Actions. This ensures automated linting, formatting and builds with each push to the repository
 
 ## Usage
 
