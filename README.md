@@ -4,19 +4,23 @@ This React web app is a banking application that provides features for currency 
 
 ## Features & APIs Used
 
-- [Conversion API](https://rapidapi.com/principalapis/api/currency-conversion-and-exchange-rates) - Allows users to convert currencies with real-time rates.
-- [Financial News API](https://rapidapi.com/xiangyuahu/api/real-time-financial-news-and-sentiments) - Fetches the latest financial news for specific currencies.
+-  [Conversion API](https://rapidapi.com/principalapis/api/currency-conversion-and-exchange-rates) - Allows users to convert currencies with real-time rates.
+-  [Financial News API](https://rapidapi.com/xiangyuahu/api/real-time-financial-news-and-sentiments) - Fetches the latest financial news for specific currencies.
 
 ## Deployment
 
 The app is deployed on Vercel. You can check it out [here](basalt-banking).
 
+## CI
+
+Continuous Integration (CI) is set up using GitHub Actions. This ensures automated linting, formatting and builds with each push to the repository
+
 ## Getting Started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) installed
-- Package manager: [pnpm](https://pnpm.io/installation)
+-  [Node.js](https://nodejs.org/) installed
+-  Package manager: [pnpm](https://pnpm.io/installation)
 
 ### Installation
 
@@ -63,9 +67,9 @@ Include screenshots or GIFs of your application to give users a visual overview.
 
 List the technologies, frameworks, and libraries used in your project.
 
-- React, Next
-- Tailwind CSS
-- React query
-- shadcn/ui
-- zustand
-- typescript
+-  React, Next
+-  Tailwind CSS
+-  React query
+-  shadcn/ui
+-  zustand
+-  typescript
