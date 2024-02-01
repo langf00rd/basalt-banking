@@ -4,11 +4,11 @@
  * @param options - fetch options
  */
 export default async function apiHandler<T>(
-   url: string,
-   options?: Record<string, unknown>
+  url: string,
+  options?: Record<string, unknown>,
 ): Promise<T> {
-   const response = await fetch(url, options);
-   const result = await response.json();
-   if (result.error) throw Error(result);
-   return result as T;
+  const response = await fetch(url, options);
+  const result = await response.json();
+  if (result.error) throw Error(result);
+  return result as T;
 }

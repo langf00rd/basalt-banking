@@ -6,22 +6,22 @@ import { ConversionHistory } from "../interface";
  * @param amount
  */
 export default function saveConversionHistory(
-   fromCurrencyCode: string,
-   toCurrencyCode: string,
-   amount: number
+  fromCurrencyCode: string,
+  toCurrencyCode: string,
+  amount: number,
 ) {
-   const storedConversions = localStorage.getItem("conversions");
-   const parsedStoredConversions = JSON.parse(storedConversions ?? "[]");
-   const newStoredConversions = [
-      ...parsedStoredConversions,
-      {
-         fromCurrencyCode,
-         toCurrencyCode,
-         amount,
-         timestamp: new Date().toISOString(),
-      },
-   ];
-   localStorage.setItem("conversions", JSON.stringify(newStoredConversions));
+  const storedConversions = localStorage.getItem("conversions");
+  const parsedStoredConversions = JSON.parse(storedConversions ?? "[]");
+  const newStoredConversions = [
+    ...parsedStoredConversions,
+    {
+      fromCurrencyCode,
+      toCurrencyCode,
+      amount,
+      timestamp: new Date().toISOString(),
+    },
+  ];
+  localStorage.setItem("conversions", JSON.stringify(newStoredConversions));
 }
 
 /**
@@ -29,7 +29,7 @@ export default function saveConversionHistory(
  * @returns conversion history from local storage
  */
 export function getConversionHistory() {
-   const storedConversions = localStorage.getItem("conversions");
-   if (!storedConversions) return [];
-   return [...JSON.parse(storedConversions)].reverse() as ConversionHistory[];
+  const storedConversions = localStorage.getItem("conversions");
+  if (!storedConversions) return [];
+  return [...JSON.parse(storedConversions)].reverse() as ConversionHistory[];
 }

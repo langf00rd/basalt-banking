@@ -7,5 +7,5 @@ import { twMerge } from "tailwind-merge";
  * @returns
  */
 export function cn(...classNamesInput: ClassValue[]): string {
-   return twMerge(clsx(classNamesInput));
+  return twMerge(clsx(classNamesInput));
 }

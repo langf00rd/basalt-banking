@@ -8,27 +8,28 @@ import saveConversionHistory from "../utils/conversion-history";
  * @returns result amount and rate
  */
 export async function convertCurrency(
-   fromCurrencyCode: string,
-   toCurrencyCode: string,
-   amount: number
+  fromCurrencyCode: string,
+  toCurrencyCode: string,
+  amount: number,
 ) {
-   saveConversionHistory(fromCurrencyCode, toCurrencyCode, amount);
-   const url = `${CONVERSION_API_BASE_URL}?from=${fromCurrencyCode}&to=${toCurrencyCode}&amount=${amount}`;
-   const options = {
-      method: "GET",
-      headers: {
-         "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_API_KEY as string,
-         "X-RapidAPI-Host": "currency-conversion-and-exchange-rates.p.rapidapi.com",
-      },
-   };
+  saveConversionHistory(fromCurrencyCode, toCurrencyCode, amount);
+  const url = `${CONVERSION_API_BASE_URL}?from=${fromCurrencyCode}&to=${toCurrencyCode}&amount=${amount}`;
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPID_API_KEY as string,
+      "X-RapidAPI-Host":
+        "currency-conversion-and-exchange-rates.p.rapidapi.com",
+    },
+  };
 
-   const response = await fetch(url, options);
-   const jsonResponse = await response.json();
+  const response = await fetch(url, options);
+  const jsonResponse = await response.json();
 
-   if (!jsonResponse.success) throw jsonResponse.error.info;
+  if (!jsonResponse.success) throw jsonResponse.error.info;
 
-   return {
-      result: jsonResponse.result,
-      rate: jsonResponse.info.rate,
-   };
+  return {
+    result: jsonResponse.result,
+    rate: jsonResponse.info.rate,
+  };
 }
