@@ -1,10 +1,10 @@
 import { Calendar, Plus } from "lucide-react";
-import Image from "next/image";
 import { Button } from "./ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { HEADER_PROFILE_LINKS } from "@/lib/constants";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import Clock from "./clock";
 
 export default function Header() {
    return (
@@ -15,7 +15,7 @@ export default function Header() {
             </div>
             <div>
                <p>{Date().substring(0, 15)}</p>
-               <p>08:45:03 UTC</p>
+               <Clock />
             </div>
          </div>
          <div className="flex space-x-10">
