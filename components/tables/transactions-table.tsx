@@ -21,7 +21,7 @@ export default function TransactionsTable() {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {Array.from({ length: 13 }).map((_, i) => (
+        {Array.from({ length: 7 }).map((_, i) => (
           <TableRow key={i}>
             <TableCell>000{i}</TableCell>
             <TableCell>paid</TableCell>

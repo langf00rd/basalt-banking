@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 
 export default function Home() {
   return (
-    <MainLayout title="Cards">
+    <MainLayout title="Home">
       <ul className="grid grid-cols-5 gap-5">
         {Array.from({ length: 3 }).map((_, i) => (
           <Card className="rounded-3xl p-5 h-[250px] bg-white" key={i}>

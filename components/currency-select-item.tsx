@@ -38,7 +38,7 @@ export function CurrecySelectItem(props: {
       />
       <div className="text-[5rem] font-extralight">
         {props.showInput ? (
-          <div className="flex">
+          <div className="flex items-center">
             <p>{props.currencyData?.currency.symbol}</p>
             <input
               onChange={(e) => props.onAmountChange?.(Number(e.target.value))}

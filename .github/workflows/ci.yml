@@ -30,8 +30,5 @@ jobs:
          - name: lint code
            run: pnpm run lint
 
-         - name: format code
-           run: pnpm run format
-
          - name: run build
            run: pnpm run build

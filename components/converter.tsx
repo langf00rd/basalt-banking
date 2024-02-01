@@ -7,7 +7,7 @@ import { FormEvent, useState } from "react";
 import { toast } from "sonner";
 
 export default function CurrencyConverter() {
-  const [rate, setRate] = useState(0);
+  const [rate, setRate] = useState<number | null>(null);
   const [amount, setAmount] = useState(1);
   const [result, setResult] = useState(0);
   const [isloading, setIsLoading] = useState(false);
@@ -66,10 +66,12 @@ export default function CurrencyConverter() {
           setCurrencyData={setToCurrencyData}
         />
       </form>
-      <div className="p-2 flex space-x-2">
-        <Info />
-        <p>Exchange rate: {rate}</p>
-      </div>
+      {rate && (
+        <div className="p-2 flex space-x-2">
+          <Info />
+          <p>Exchange rate: {rate}</p>
+        </div>
+      )}
     </div>
   );
 }
